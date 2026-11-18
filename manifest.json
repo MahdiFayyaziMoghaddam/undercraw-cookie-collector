@@ -1,0 +1,10 @@
+{
+	"manifest_version": 3,
+	"name": "undercraw-cookie-collector",
+	"version": "1.0",
+	"description": "Serves per-domain cookies to the app on request",
+	"permissions": ["cookies"],
+	"host_permissions": ["<all_urls>"],
+	"background": { "service_worker": "background.js" },
+	"content_scripts": [{ "matches": ["http://localhost:3000/*"], "js": ["content.js"], "run_at": "document_start" }]
+}
