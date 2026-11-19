@@ -1,10 +1,21 @@
 {
+	"$schema": "https://json.schemastore.org/chrome-manifest",
 	"manifest_version": 3,
 	"name": "undercraw-cookie-collector",
-	"version": "1.0",
-	"description": "Serves per-domain cookies to the app on request",
+	"version": "1.0.0",
+	"description": "Serves per-domain cookies to the Undercraw on request",
 	"permissions": ["cookies"],
 	"host_permissions": ["<all_urls>"],
 	"background": { "service_worker": "background.js" },
-	"content_scripts": [{ "matches": ["http://localhost:3000/*"], "js": ["content.js"], "run_at": "document_start" }]
+	"content_scripts": [{ "matches": ["http://localhost:3000/*"], "js": ["content.js"], "run_at": "document_start" }],
+	"action": {
+		"default_icon": { "16": "./assets/icon.png", "24": "./assets/icon.png", "32": "./assets/icon.png" },
+		"default_title": "Undercraw Cookie Collector"
+	},
+	"icons": {
+		"16": "./assets/icon.png",
+		"48": "./assets/icon.png",
+		"128": "./assets/icon.png",
+		"256": "./assets/icon.png"
+	}
 }
